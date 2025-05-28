@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://j1ppn42fok2s"]
+
+[ext_resource type="Script" path="res://script/Square.cs" id="1_fwxbp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1w4v"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7g0j"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="square" type="Button"]
+light_mask = 2
+visibility_layer = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_u1w4v")
+script = ExtResource("1_fwxbp")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_d7g0j")
+
+[connection signal="pressed" from="." to="." method="_on_toggled"]

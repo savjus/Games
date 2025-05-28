@@ -1,0 +1,18 @@
+config_version=5
+
+[application]
+
+config/name="ChessAttemptTextBased"
+run/main_scene="res://scenes/board.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+config/icon="res://art/icon.svg"
+
+[display]
+
+window/size/viewport_width=700
+window/size/viewport_height=700
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="ChessAttempt"

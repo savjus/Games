@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjxl26ix17x02"]
+
+[ext_resource type="StyleBox" uid="uid://cnn2yqbgd6xgb" path="res://RestartGrad.tres" id="1_0fvf8"]
+[ext_resource type="Script" path="res://main.gd" id="1_atbnk"]
+
+[sub_resource type="Environment" id="Environment_6s8nt"]
+ambient_light_energy = 6.0
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 8.0
+glow_bloom = 1.0
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_atbnk")
+play_with = "AI"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 700.0
+color = Color(0, 0, 0, 1)
+
+[node name="restart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("1_0fvf8")
+theme_override_styles/disabled_mirrored = ExtResource("1_0fvf8")
+theme_override_styles/disabled = ExtResource("1_0fvf8")
+theme_override_styles/hover_pressed_mirrored = ExtResource("1_0fvf8")
+theme_override_styles/hover_pressed = ExtResource("1_0fvf8")
+theme_override_styles/hover_mirrored = ExtResource("1_0fvf8")
+theme_override_styles/hover = ExtResource("1_0fvf8")
+theme_override_styles/pressed_mirrored = ExtResource("1_0fvf8")
+theme_override_styles/pressed = ExtResource("1_0fvf8")
+theme_override_styles/normal_mirrored = ExtResource("1_0fvf8")
+theme_override_styles/normal = ExtResource("1_0fvf8")
+text = "restart"
+
+[node name="Cells" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.857143
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6s8nt")
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]

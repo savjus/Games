@@ -1,0 +1,14 @@
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\bin\Debug\net9.0-windows\TicTacToeAi.exe
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\bin\Debug\net9.0-windows\TicTacToeAi.deps.json
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\bin\Debug\net9.0-windows\TicTacToeAi.runtimeconfig.json
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\bin\Debug\net9.0-windows\TicTacToeAi.dll
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\bin\Debug\net9.0-windows\TicTacToeAi.pdb
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\obj\Debug\net9.0-windows\TicTacToeAi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\obj\Debug\net9.0-windows\TicTacToeAi.AssemblyInfoInputs.cache
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\obj\Debug\net9.0-windows\TicTacToeAi.AssemblyInfo.cs
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\obj\Debug\net9.0-windows\TicTacToeAi.csproj.CoreCompileInputs.cache
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\obj\Debug\net9.0-windows\TicTacToeAi.dll
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\obj\Debug\net9.0-windows\refint\TicTacToeAi.dll
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\obj\Debug\net9.0-windows\TicTacToeAi.pdb
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\obj\Debug\net9.0-windows\TicTacToeAi.genruntimeconfig.cache
+C:\Users\salvp\source\repos\Random projects\projects\TicTacToeAllengines\ConsoleApp1\TicTacToeAi\obj\Debug\net9.0-windows\ref\TicTacToeAi.dll

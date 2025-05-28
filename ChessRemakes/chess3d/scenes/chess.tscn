@@ -1,0 +1,164 @@
+[gd_scene load_steps=11 format=3 uid="uid://dkcbxybxc8ji8"]
+
+[ext_resource type="Material" uid="uid://dfjtpvs1xffrc" path="res://art/MAts/Highlight.tres" id="1_t1rcp"]
+[ext_resource type="PackedScene" uid="uid://diafosokddojr" path="res://art/Blend/round_wooden_table_01_4k.blend" id="4_lxoxf"]
+[ext_resource type="Texture2D" uid="uid://c8xriuqfk7fvy" path="res://art/fireplace_4k.exr" id="4_xq7ha"]
+[ext_resource type="StyleBox" uid="uid://bpk54xmffgwf4" path="res://art/MAts/ButtonPromotionColor.tres" id="5_nqvms"]
+[ext_resource type="AudioStream" uid="uid://c0dxksw6u15n2" path="res://art/MoveSound.mp3" id="7_3x7xb"]
+[ext_resource type="AudioStream" uid="uid://dcxjjqwi3voev" path="res://art/TakeSound.mp3" id="8_p5wx4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1bw35"]
+material = ExtResource("1_t1rcp")
+size = Vector2(8, 8)
+center_offset = Vector3(-0.5, 0, -0.5)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jwtcs"]
+panorama = ExtResource("4_xq7ha")
+
+[sub_resource type="Sky" id="Sky_l4cll"]
+sky_material = SubResource("PanoramaSkyMaterial_jwtcs")
+
+[sub_resource type="Environment" id="Environment_02emt"]
+background_mode = 2
+background_energy_multiplier = 0.8
+sky = SubResource("Sky_l4cll")
+
+[node name="Chess" type="Node3D"]
+
+[node name="Board" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_1bw35")
+
+[node name="round_wooden_table_01_4k" parent="." instance=ExtResource("4_lxoxf")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 1, -12.1, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_02emt")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.978224, 0.0886962, -0.187647, 0.200481, -0.169796, 0.964871, 0.0537187, -0.98148, -0.183881, -3, 12.5539, -2.76815)
+light_energy = 20.0
+spot_range = 17.0
+spot_angle = 48.35
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, 0.707107, -1, 1.77636e-15, -4.37114e-08, 4, 5, -1)
+
+[node name="Hud" type="Control" parent="Camera3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Promotion" type="Control" parent="Camera3D/Hud"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -424.0
+offset_right = 424.0
+offset_bottom = 157.0
+grow_horizontal = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera3D/Hud/Promotion"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="knight" type="Button" parent="Camera3D/Hud/Promotion/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("5_nqvms")
+text = "Knight
+"
+
+[node name="rook" type="Button" parent="Camera3D/Hud/Promotion/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("5_nqvms")
+text = "Rook
+"
+
+[node name="bishop" type="Button" parent="Camera3D/Hud/Promotion/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("5_nqvms")
+text = "Bishop
+"
+
+[node name="queen" type="Button" parent="Camera3D/Hud/Promotion/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("5_nqvms")
+text = "Queen
+"
+
+[node name="Check" type="Control" parent="Camera3D/Hud"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 416.0
+offset_top = 6.0
+offset_right = 682.0
+offset_bottom = 149.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Camera3D/Hud/Check"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+offset_right = 166.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+
+[node name="victory" type="Control" parent="Camera3D/Hud"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Camera3D/Hud/victory"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -68.5
+offset_right = 299.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+
+[node name="MoveSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_3x7xb")
+volume_db = 80.0
+
+[node name="TakeSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_p5wx4")
+volume_db = 80.0
+
+[connection signal="pressed" from="Camera3D/Hud/Promotion/HBoxContainer/knight" to="Camera3D/Hud/Promotion" method="PressedKnight"]
+[connection signal="pressed" from="Camera3D/Hud/Promotion/HBoxContainer/rook" to="Camera3D/Hud/Promotion" method="PressedRook"]
+[connection signal="pressed" from="Camera3D/Hud/Promotion/HBoxContainer/bishop" to="Camera3D/Hud/Promotion" method="PressedBishop"]
+[connection signal="pressed" from="Camera3D/Hud/Promotion/HBoxContainer/queen" to="Camera3D/Hud/Promotion" method="PressedQueen"]

@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=3 uid="uid://m4iknmxy3n3v"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_cw2to"]
+
+[sub_resource type="Gradient" id="Gradient_pyrlq"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0.313726, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o4hb5"]
+gradient = SubResource("Gradient_pyrlq")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p14kc"]
+gradient = SubResource("Gradient_pyrlq")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_r37g5"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0.313726, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6mbwg"]
+gradient = SubResource("Gradient_r37g5")
+fill_from = Vector2(0.482906, 0)
+fill_to = Vector2(0.491453, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kef2d"]
+gradient = SubResource("Gradient_r37g5")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0.987179)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p73ti"]
+gradient = SubResource("Gradient_r37g5")
+fill_from = Vector2(1, 0.474359)
+fill_to = Vector2(0, 0.461538)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_yo854"]
+frames = 5
+frame_0/texture = SubResource("GradientTexture2D_o4hb5")
+frame_0/duration = 0.2
+frame_1/texture = SubResource("GradientTexture2D_p14kc")
+frame_1/duration = 0.2
+frame_2/texture = SubResource("GradientTexture2D_6mbwg")
+frame_2/duration = 0.2
+frame_3/texture = SubResource("GradientTexture2D_kef2d")
+frame_3/duration = 0.2
+frame_4/texture = SubResource("GradientTexture2D_p73ti")
+frame_4/duration = 0.2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qaxci"]
+texture = SubResource("AnimatedTexture_yo854")
+
+[sub_resource type="Environment" id="Environment_sfndr"]
+glow_enabled = true
+glow_levels/1 = 7.5
+glow_levels/2 = 5.3
+glow_levels/3 = 13.1
+glow_levels/4 = 5.25
+glow_intensity = 6.55
+glow_strength = 2.0
+glow_blend_mode = 4
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_cw2to")
+playWith = "AI"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="restart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_qaxci")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qaxci")
+text = "Restart"
+
+[node name="Cells" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sfndr")
+
+[connection signal="pressed" from="restart" to="." method="OnRestartPressed"]

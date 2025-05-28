@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://chseyomfwtspt"]
+
+[ext_resource type="Script" path="res://scripts/Highlight.cs" id="1_g4q6t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e3qkj"]
+size = Vector3(1, 0.6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gesx2"]
+
+[node name="Tile" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = SubResource("BoxMesh_e3qkj")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_g4q6t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_gesx2")
